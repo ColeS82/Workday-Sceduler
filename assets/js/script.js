@@ -1,10 +1,10 @@
+
+
 const button = document.querySelector('button')
 $("#currentDay").text(moment().format('dddd') + ", ");
 $("#dateTime").text(moment().format('MMMM Do YYYY', 'h:mm:ss a'));
 const hour = moment().hour()
 let text1 = document.querySelector('#text-1')
-
-console.log(hour)
 
 //current time highlighter
 if (hour === 9){
@@ -104,10 +104,29 @@ if (17 > hour){
 
 button.addEventListener("click", storeText);
 
-
+//stores the input from the text area into local storage
 function storeText(){
         localStorage.setItem("text-1", text1.value)
 }
 
+//retrieves text from local storage to display in the text area after refresh
 let = textOutput = localStorage.getItem('text-1')
-text1.innerText = textOutput
+text1.textContent = textOutput
+
+
+//for future reference try to dry up the code with these methods
+// const time = [9, 10, 11]
+
+// for (i = 0; i < time.length; i++) {
+//    console.log(`row-${time[i]}`) //-- template literal, back ticks are important here
+ 
+// }
+
+// const elements = document.querySelectorAll(".hour-9")
+// for (const element of elements){
+//         let id = element.getAttribute("id")        
+//         console.log(id)
+// }
+
+
+
