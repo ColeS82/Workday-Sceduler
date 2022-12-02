@@ -189,20 +189,42 @@ let = textOutput = localStorage.getItem('text-9')
 text9.textContent = textOutput;
 
 
-//for future reference try to dry up the code with these methods
-// const time = [9, 10, 11] --for example purpose
 
-// for (i = 0; i < time.length; i++) {
-//    console.log(`row-${time[i]}`) //-- template literal, back ticks are important here
- 
+//** More concise solution below**
+
+// const timeArray = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+// const $rows = document.querySelectorAll('#time-slots > section');
+// const $timeSlots = document.querySelectorAll('section > .time');
+// const $todos = document.querySelectorAll('section > .todos');
+// const $txt = document.querySelectorAll('textarea')
+// const hour = new Date().getHours()
+
+// console.log(hour)
+
+// //draws containers for $timeSlots
+// for (let i = 0; i < $rows.length; i++){
+//     $rows[i].className = 'row border';
+//     $timeSlots[i].className = 'col-sm-3 ';
+//     $todos[i].className = 'col-sm-9';
+//     $txt[i].className = 'border-0 text-bg-light'
+//     $txt[i].style= 'width: 100%;';
+    
+
 // }
-// let text = [1,2,3,4,5,6,7,8,9]
 
-// const elements = document.querySelectorAll("button")
-// for (const element of elements){
-//         let id = element.getAttribute("id")
-//         console.log(id)
+// //** conditionally sets colors according to time**
+// for (let i=0; i < timeArray.length; i++){
+// if (hour == timeArray[i]){
+//     $rows[i].classList.add('bg-danger');
+// }else if (hour < timeArray[i]){
+//     $rows[i].classList.add('text-bg-success')
+// }else {
+//     $rows[i].classList.add('text-bg-secondary')
+// }
 // }
 
 
-
+// console.log($rows)
+// console.log($timeSlots)
+// console.log($todos)
+// console.log($txt)
